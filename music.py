@@ -1,4 +1,4 @@
-import requests, webbrowser, bs4
+import requests, webbrowser, bs4, re
 
 def play_song(s_name):
     if len(s_name) >= 1:
@@ -19,4 +19,8 @@ def play_song(s_name):
 
         
 s_name = input("Enter song's name: ")
-play_song(s_name)
+pattern = re.compile('[a-zA-Z]+')
+if pattern.match(s_name) is not None:
+    play_song(s_name)
+else:
+    print("Enter a valid song name")
