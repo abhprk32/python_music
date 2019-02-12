@@ -2,7 +2,7 @@ import requests, webbrowser, bs4
 
 def play_song(s_name):
     if len(s_name) >= 1:
-        page = requests.get("http://wwww.youtube.com/results?search_query="+s_name)
+        page = requests.get("http://www.youtube.com/results?search_query="+s_name)
         if page.status_code != 200:
             print("There was an error playing your music")
         else:
